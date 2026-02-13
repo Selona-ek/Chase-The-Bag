@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chase the Bag - Finance Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: #0a0a0a;
+      color: #e6f5e6;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+ 
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1800px;
+      margin: auto;
+      padding: 2rem 0;
+    }
+ 
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    header h1 {
+      font-weight: 700;
+      color: #00ff7f; /* Bold green */
+    }
+ 
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem 0;
+    }
+    .hero-text {
+      flex: 1 1 500px;
+      padding-right: 2rem;
+    }
+    .hero-text h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #00ff7f;
+    }
+    .hero-text p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      color: #c8f5c8;
+    }
+    .hero-text button {
+      background-color: #00ff7f;
+      color: #0a0a0a;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    .hero-text button:hover {
+      background-color: #00cc5c;
+    }
+    .hero-img {
+      flex: 1 1 400px;
+      text-align: center;
+    }
+    .hero-img img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+ 
+    /* Stats */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin: 3rem 0;
+    }
+    .stats div {
+      text-align: center;
+    }
+    .stats div h3 {
+      font-size: 2rem;
+      color: #00ff7f;
+    }
+    .stats div p {
+      color: #c8f5c8;
+      margin-top: 0.5rem;
+    }
+ 
+    /* Skills Section */
+    .skills {
+      background-color: #111;
+      padding: 3rem 0;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+    .skills h3 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #00ff7f;
+    }
+    .skills-list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .skill {
+      background-color: #0a0a0a;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 200px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .skill:hover {
+      transform: translateY(-10px);
+    }
+    .skill h4 {
+      margin-bottom: 1rem;
+      color: #00ff7f;
+    }
+ 
+    /* Blog Section */
+    .blog {
+      margin-bottom: 3rem;
+    }
+    .blog h3 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #00ff7f;
+    }
+    .blog-posts {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .post {
+      background-color: #0a0a0a;
+      padding: 1.5rem;
+      border-radius: 12px;
+      width: 300px;
+      transition: transform 0.3s;
+    }
+    .post:hover {
+      transform: translateY(-5px);
+    }
+    .post h4 {
+      color: #00ff7f;
+      margin-bottom: 1rem;
+    }
+    .post p {
+      color: #c8f5c8;
+    }
+ 
+    /* Contact Section */
+    .contact {
+      background-color: #111;
+      padding: 3rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .contact h3 {
+      font-size: 2rem;
+      color: #00ff7f;
+      margin-bottom: 1.5rem;
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: auto;
+      gap: 1rem;
+    }
+    .contact input, .contact textarea {
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+    }
+    .contact button {
+      background-color: #00ff7f;
+      color: #0a0a0a;
+      padding: 0.75rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    .contact button:hover {
+      background-color: #00cc5c;
+    }
+ 
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #0a0a0a;
+      color: #c8f5c8;
+    }
+ 
+    @media(max-width:768px){
+      .hero{
+        flex-direction: column;
+      }
+      .hero-text{
+        padding-right: 0;
+        text-align: center;
+      }
+      .stats{
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+	  section {
+  margin-bottom: 5rem;
+    }
+	
+	  .container {
+  padding: 2rem 1.5rem;
+}
+      .stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+      a {
+  color: #00ff7f;
+  position: relative;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #00ff7f;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  min-height: 80vh;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(0,255,127,0.12), transparent 60%);
+  z-index: -1;
+}
+
+	table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+th {
+  text-align: left;
+  color: #00ff7f;
+}
+
+section:not(:first-child)::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #00ff7f, transparent);
+  margin-bottom: 4rem;
+  opacity: 0.3;
+}
+<strong></strong>
+	
+:root {
+  --bg-main: #0a0a0a;
+  --bg-soft: #111;
+  --accent: #00ff7f;
+  --accent-soft: #7dffb2;
+  --text-main: #e6f5e6;
+  --text-muted: #b6d8b6;
+  --radius: 16px;
+  --transition: 0.35s ease;
+}
+
+button {
+  background: var(--accent);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+section:nth-child(even) {
+  background: #0f0f0f;
+}
+	
+.skill, .post {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.skill:hover, .post:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0,255,127,0.15);
+}
+
+	
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  font-weight: 600;
+}
+
+.glow {
+  position: relative;
+}
+
+.glow::after {
+  content: '';
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(circle, rgba(0,255,127,0.12), transparent 60%);
+  z-index: -1;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: '→';
+  color: var(--accent);
+  margin-right: 0.75rem;
+}
+
+.cta {
+  margin: 4rem auto;
+  padding: 3rem;
+  max-width: 700px;
+  text-align: center;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #00ff7f, #00cc5c);
+  color: #0a0a0a;
+}
+
+section h3 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+
+
+
+</style>
+</head>
+<body>
+ 
+  <header class="container">
+<h1>$ Chase the Bag $ </h1>
+<nav>
+  <p>
+    <a href="https://restless.co.uk/money/wills-funeral-planning-and-inheritance-tax/can-i-give-my-family-an-early-inheritance/">Inheritance</a> |
+    <a href="https://www.investopedia.com/10-investing-concepts-beginners-need-to-learn-5219500">Investment</a> |
+    <a href="https://www.moneyhelper.org.uk/en/everyday-money/budgeting/beginners-guide-to-managing-your-money">Spending Basics</a>
+  </p>
+</nav>
+
+</header>
+ 
+  <!-- Hero Section -->
+<section class="hero container">
+  <div class="hero-text">
+<h2>Welcome, you have arrived to your main destination.</h2>
+<p>Finance Specialist helping you maximize inherited wealth and build a lasting legacy. Learn, invest, and grow your money wisely.
+	</p>
+<p>Basic Concepts
+  
+  </p>
+<p>Most 16–18-year-olds understand:
+  
+  ·</p>
+<p> Money is used to buy goods and services
+  
+  ·</p>
+<p> Earning money comes from working
+  
+  · </p>
+<p>You pay different amounts for different things
+  
+  · </p>
+<p>A bank is a place to save or borrow money. These are usually learned through daily life and school.</p>
+<p>summary:</p>
+<table width="800" border="1">
+  <tbody>
+    <tr>
+      <th scope="col">Topic</th>
+      <th scope="col">Teen Knowledge (Typical)</th>
+    </tr>
+    <tr>
+      <td>Spending basics</td>
+      <td>Usually, okay</td>
+    </tr>
+    <tr>
+      <td>Saving money</td>
+      <td>Some know basics</td>
+    </tr>
+    <tr>
+      <td>Budgeting</td>
+      <td>Often limited</td>
+    </tr>
+    <tr>
+      <td>Banking &amp; interest</td>
+      <td>Mixed understanding</td>
+    </tr>
+    <tr>
+      <td>Credit &amp; debt</td>
+      <td>Often weak</td>
+    </tr>
+    <tr>
+      <td>Taxes &amp; real-world costs</td>
+      <td>Often weak</td>
+    </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<p><a href="https://britwealth.com/uk/finance/personal-savings/smart-saving-tips-for-young-adults-in-the-uk/#google_vignette">Tips for saving money!</a></p>
+
+</div>
+<div class="hero-img">
+  <p><img src="images/1711725644328.png" width="250" height="250" alt=""/></p>
+  <p><a href="https://www.bankofengland.co.uk/explainers/what-is-money">Everything you need to know about money.</a></p>
+</div>
+</section>
+ 
+  <!-- Stats -->
+<section class="stats container">
+<div>
+<h3>What age should be given money?</h3>
+<p>There isn’t one single “right” age, because access to money works best when it grows with responsibility.&nbsp;</p>
+<p>Most experts agree it should be gradual, not all at once. Here’s a clear, age-based way to think about it:</p>
+<h3>Ages 5–7: Introduction to Money</h3>
+<p>Type of access: very limited</p>
+<p>· Small amounts of cash or coins</p>
+<p>· Learning what money is and that it&rsquo;s finite</p>
+<p>· Simple choices: spend now or save for later</p>
+<p>Goal: understand money represents value</p>
+	
+	
+<h3>Ages 8–11: Guided Practice</h3>
+<p>Type of access: limited, supervised</p>
+<p>· Regular allowance or small earned money</p>
+<p>· Simple saving goals</p>
+<p>· Adult oversight</p>
+<p>Goal: learn basic spending and saving</p>
+	
+	
+<h3>Ages 12–14: Shared Control</h3>
+<p>Type of access: partial independence</p>
+<p>· Prepaid debit card or youth bank account</p>
+<p>· Managing small budgets (clothes, outings)</p>
+<p>· Making mistakes with guidance</p>
+<p>Goal: practice budgeting and consequences</p>
+<h3>Ages 15–17: Increasing Independence</h3>
+<p>Type of access: mostly independent</p>
+<p>· Bank account with debit card</p>
+<p>· Earnings from part-time work</p>
+<p>· Paying for some personal expenses</p>
+<p>· Learning about taxes, interest, and fees</p>
+<p>Goal: prepare for real-world money management.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<div>
+<h3>Full Legal Control</h3>
+<h3>Ages 18+</h3>
+<p>Type of access: independent</p>
+<p>· Full control over bank accounts</p>
+<p>· Credit cards and loans (with caution)</p>
+<p>· Rent, bills, and long-term financial decisions</p>
+<p>Goal: manage money independently and responsibly</p>
+<p>Key Principle (More Important Than Age)</p>
+<p>The &ldquo;right&rdquo; age depends more on:</p>
+<p>· Maturity and self-control</p>
+<p>· Understanding consequences</p>
+<p>· Guidance and education</p>
+</div>
+</section>
+ 
+  <!-- Skills -->
+<section class="skills container" id="skills">
+  <h3>From the 1990s grind to today’s digital hustle, the way people think about money has changed. What used to be about survival is now about strategy.&nbsp;</h3>
+  <h3>Money mindset has evolved — and so must you.</h3>
+<div class="skills-list">
+  <div class="skill"><h4>Money Mindset
+	  Then vs Now</h4></div>
+  <div class="skill">
+    <h4>In the 1990s, the goal was stability.</h4>
+    <h4>&nbsp;Work hard. Stay loyal. Get a paycheck.</h4>
+    <h4>&nbsp;One job was security.&nbsp;</h4>
+    <h4>Saving what was left over was success. Wealth felt distant and reserved for a lucky few.</h4>
+</div>
+  <div class="skill">
+    <h4>Today, the goal is freedom. Work smart. Build options.</h4>
+    <h4>&nbsp;Create leverage. Multiple income streams replace single paychecks.&nbsp;</h4>
+    <h4>You pay yourself first, invest early, and think long term.&nbsp;</h4>
+    <h4>Wealth is built through systems, not chance.</h4>
+</div>
+</div>
+</section>
+ 
+  <!-- Blog -->
+<section class="blog container" id="blog">
+<h3>The Shift</h3>
+<div class="blog-posts">
+<div class="post">
+  <h4>Old belief: Money comes from labor.&nbsp;</h4>
+  <h4>New belief: Money comes from leverage.&nbsp;</h4>
+  <h4>&nbsp;Old belief: Stability is safety.
+    New belief: Adaptability is safety.&nbsp;</h4>
+  <h4>&nbsp;Old belief: Rich people are lucky.&nbsp;</h4>
+  <h4>New belief: Rich people are strategic.</h4>
+</div>
+<div class="post">
+
+
+<div class="post">
+<h4>The Chase The Bag Principles</h4>
+<p>Income without ownership is fragile.</p>
+<p>&nbsp;Time is more valuable than money.&nbsp;</p>
+<p>Skills pay faster than degrees.
+  Assets outperform paychecks.
+  Financial literacy is modern power.</p>
+</div>
+</div>
+</section>
+	
+<section class="hero container fade-in">
+	
+<div class="cta">
+  <h2>Challenge Yourself</h2>
+  <p>Test your money mindset in 2 minutes.</p>
+  <a href="LINK" class="button"><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=YjkApOihi0KvmaMALskNv1gwn3zMVORGpheE1p4X5gZUQzZJTU5UUk1QTjYxRVA0QjAwWFVRREM1NC4u">Take the Quiz</a></a>
+</div>
+
+
+ 
+  <!-- Contact -->
+<section class="contact container" id="contact">
+<h3><strong>Why This Matters</strong></h3>
+<p>The 90s taught us how to survive.</p>
+<p>Today teaches us how to scale.</p>
+
+<p><strong>Chase The Bag</strong> is about shifting from:</p>
+
+<ul>
+  <li>Employee → Owner</li>
+  <li>Consumer → Investor</li>
+  <li>Scarcity → Strategy</li>
+</ul>
+</section><h1>Challange your self right now! </h1>
+	<p> <strong> A FAKE WEBSITE MADE BY A STUDENT!&nbsp; </strong></p>
+ 
+  <footer>
+&copy; 2026 Chase the Bag. All Rights Reserved.
+</footer>
+ 
+</body>
+</html>
